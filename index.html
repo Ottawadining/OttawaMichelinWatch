@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ottawa Michelin Watch — Star Predictions for Ottawa Restaurants</title>
+  <meta name="description" content="Which Ottawa restaurants would earn Michelin stars? Our independent watchlist tracks the city's best fine dining contenders for Michelin Guide recognition." />
+  <meta name="keywords" content="Ottawa Michelin stars, Ottawa Michelin Guide, Ottawa fine dining, Ottawa restaurants Michelin, Ottawa star predictions, Ottawa Bib Gourmand, Michelin Guide Canada, Ottawa food scene, Atelier Ottawa, Ottawa tasting menu" />
+  <meta property="og:title" content="Ottawa Michelin Watch — Star Predictions for Ottawa Restaurants" />
+  <meta property="og:description" content="Which Ottawa restaurants would earn Michelin stars if the Guide came to Ottawa? Our independent watchlist tracks the city's top fine dining contenders." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ottawamichelinwatch.ca" />
+  <meta property="og:image" content="https://ottawamichelinwatch.ca/omw-hero.jpg" />
+  <link rel="canonical" href="https://ottawamichelinwatch.ca" />
+  <meta name="google-site-verification" content="Iceycfqmm47tOxbNl4Coroz2LlowM7k1VPQScbVmGCI" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #a82820;
+      --gold: #b07d2a;
+      --bg: #ffffff;
+      --bg2: #f7f6f3;
+      --border: #e8e4de;
+      --text: #111010;
+      --muted: #6b6560;
+      --max: 680px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* TOP BAR */
+    .topbar {
+      background: var(--red);
+      padding: 10px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .topbar-left {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .topbar-right {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* MASTHEAD */
+    .masthead {
+      border-bottom: 3px solid var(--text);
+      padding: 40px 32px 28px;
+    }
+
+    .masthead-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .masthead h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(40px, 8vw, 72px);
+      font-weight: 700;
+      line-height: 0.95;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+
+    .masthead-rule {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .masthead-rule-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .masthead-rule-text {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .masthead-deck {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(15px, 2.5vw, 18px);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* HERO IMAGE */
+    .hero-image {
+      width: 100%;
+      max-height: 600px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      filter: brightness(0.92);
+    }
+
+    /* LEDE */
+    .lede {
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      background: var(--bg2);
+    }
+
+    .lede-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 28px 0;
+      display: flex;
+      gap: 20px;
+      align-items: baseline;
+    }
+
+    .lede-bar {
+      width: 3px;
+      height: 52px;
+      background: var(--red);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .lede-text {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .lede-text strong { color: var(--text); font-weight: 500; }
+
+    /* CONTENT */
+    .content {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 48px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-of-type { border-bottom: none; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--text);
+    }
+
+    .section-header h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(20px, 3vw, 26px);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .section-tag {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+    }
+
+    /* CATEGORY */
+    .cat-head {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 28px 0 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cat-head:first-child { margin-top: 0; }
+
+    /* RESTAURANT LIST */
+    .r-list { list-style: none; }
+
+    .r-list li {
+      display: grid;
+      grid-template-columns: 14px 1fr;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: baseline;
+    }
+
+    .r-list li:last-child { border-bottom: none; }
+
+    .r-star { color: var(--gold); font-size: 10px; line-height: 1.8; }
+    .r-name { font-weight: 500; color: var(--text); }
+    .r-desc { color: var(--muted); font-size: 13px; }
+
+    /* BIB */
+    .bib-wrap {
+      margin-top: 12px;
+      border: 1px solid var(--border);
+      padding: 20px 24px;
+      background: var(--bg2);
+    }
+
+    .bib-intro {
+      font-size: 12px;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .bib-list { list-style: none; }
+
+    .bib-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 0;
+      font-size: 14px;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .bib-list li:last-child { border-bottom: none; }
+
+    .bib-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* EXPLAINER */
+    .exp-row {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 14px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      align-items: baseline;
+    }
+
+    .exp-row:last-of-type { border-bottom: none; }
+
+    .exp-stars { color: var(--gold); font-size: 9px; }
+    .exp-label { font-weight: 500; color: var(--text); margin-right: 5px; }
+    .exp-desc { color: var(--muted); font-size: 13px; }
+
+    .exp-note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: var(--muted);
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    /* UPDATES */
+    .update {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .update:last-child { border-bottom: none; }
+
+    .update-date {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 8px;
+    }
+
+    .update-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .update-body {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    .update-body p + p { margin-top: 8px; }
+
+    .update-body ul {
+      margin: 8px 0 0 16px;
+      line-height: 1.85;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 3px solid var(--text);
+      padding: 32px;
+      background: var(--bg);
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .footer-note {
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+      text-align: right;
+    }
+
+    @media (max-width: 540px) {
+      .topbar { padding: 10px 20px; }
+      .masthead { padding: 32px 20px 24px; }
+      .lede { padding: 0 20px; }
+      .content { padding: 0 20px; }
+      footer { padding: 28px 20px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .footer-note { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <span class="topbar-left">Ottawa · Canada</span>
+    <span class="topbar-right">Independent · Est. 2025</span>
+  </div>
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="masthead-inner">
+      <h1>Ottawa<br>Michelin<br>Watch</h1>
+      <div class="masthead-rule">
+        <div class="masthead-rule-line"></div>
+        <span class="masthead-rule-text">2026 Edition</span>
+        <div class="masthead-rule-line"></div>
+      </div>
+      <p class="masthead-deck">Tracking which Ottawa restaurants would earn stars, Bib Gourmands, and recognition from the world's most celebrated dining guide.</p>
+    </div>
+  </div>
+
+  <!-- HERO IMAGE -->
+  <img class="hero-image" src="omw-hero.jpg" alt="Ottawa fine dining" />
+
+  <!-- LEDE -->
+  <div class="lede">
+    <div class="lede-inner">
+      <div class="lede-bar"></div>
+      <p class="lede-text">Michelin stars aren't about glitz — they're about <strong>precision</strong>, <strong>consistency</strong>, and the ability to deliver a <strong>world-class</strong> dining experience every single night. Ottawa has never been rated — but these are the restaurants that would make the cut if the Guide arrived tomorrow.</p>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- STAR WATCH -->
+    <div class="section">
+      <div class="section-header">
+        <h2>Star Watch 2026</h2>
+        <span class="section-tag">Our Watchlist</span>
+      </div>
+
+      <div class="cat-head">Predicted One Stars</div>
+      <ul class="r-list">
+        <li><span class="r-star">★</span><div><span class="r-name">Atelier</span> <span class="r-desc">— A modernist tasting-menu restaurant and the city's most ambitious kitchen.</span></div></li>
+        <li><span class="r-star">★</span><div><span class="r-name">Antheia</span> <span class="r-desc">— An intimate, fermentation-driven tasting menu focused on thoughtful Canadian ingredients.</span></div></li>
+        <li><span class="r-star">★</span><div><span class="r-name">Stofa</span> <span class="r-desc">— Technical execution meets quiet elegance in Wellington West.</span></div></li>
+        <li><span class="r-star">★</span><div><span class="r-name">Aiana</span> <span class="r-desc">— Refined Canadian cuisine rooted in seasonality.</span></div></li>
+      </ul>
+
+      <div class="cat-head">Possible One Stars</div>
+      <ul class="r-list">
+        <li><span class="r-star">★</span><div><span class="r-name">Fauna</span> <span class="r-desc">— Inventive Canadian cooking with bold flavours and a neighbourhood feel.</span></div></li>
+        <li><span class="r-star">★</span><div><span class="r-name">Riviera</span> <span class="r-desc">— Elevated brasserie cooking with capital-city polish.</span></div></li>
+        <li><span class="r-star">★</span><div><span class="r-name">Supply &amp; Demand</span> <span class="r-desc">— A raw bar, seafood and pasta-focused kitchen where precision meets understated elegance.</span></div></li>
+      </ul>
+
+      <div class="cat-head">Bib Gourmand Candidates</div>
+      <div class="bib-wrap">
+        <p class="bib-intro">Michelin's Bib Gourmand recognizes restaurants offering excellent food at more moderate prices.</p>
+        <ul class="bib-list">
+          <li><span class="bib-dot"></span>Gitanes</li>
+          <li><span class="bib-dot"></span>Raphaël</li>
+          <li><span class="bib-dot"></span>Jfuse</li>
+          <li><span class="bib-dot"></span>Le St. Laurent</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- WHAT DO STARS MEAN -->
+    <div class="section">
+      <div class="section-header">
+        <h2>What do stars mean?</h2>
+        <span class="section-tag">The Guide</span>
+      </div>
+
+      <div class="exp-row">
+        <span class="exp-stars">★</span>
+        <div><span class="exp-label">One Star</span><span class="exp-desc">High-quality cooking, worth a stop.</span></div>
+      </div>
+      <div class="exp-row">
+        <span class="exp-stars">★★</span>
+        <div><span class="exp-label">Two Stars</span><span class="exp-desc">Excellent cooking, worth a detour.</span></div>
+      </div>
+      <div class="exp-row">
+        <span class="exp-stars">★★★</span>
+        <div><span class="exp-label">Three Stars</span><span class="exp-desc">Exceptional cuisine, worth a special journey.</span></div>
+      </div>
+
+      <p class="exp-note">Ottawa currently has no Michelin-rated restaurants, but Toronto, Vancouver, and the province of Québec do — meaning Ottawa could be next.</p>
+    </div>
+
+    <!-- UPDATES -->
+    <div class="section">
+      <div class="section-header">
+        <h2>Updates</h2>
+        <span class="section-tag">Latest</span>
+      </div>
+
+      <div class="update">
+        <p class="update-date">August 2026</p>
+        <p class="update-title">Michelin Retires the Green Star</p>
+        <div class="update-body">
+          <p>Michelin is retiring its Green Star globally, bringing an end to the sustainability distinction just six years after it was introduced in 2020. The Green Star recognized restaurants for practices including responsible sourcing, seasonality, waste reduction and environmental stewardship, but Michelin has confirmed that the designation will be gradually phased out by the end of 2026. In its place, Michelin is launching Mindful Voices, an editorial initiative highlighting sustainability efforts across gastronomy, hospitality and wine rather than awarding restaurants a formal distinction.</p>
+          <p>For Ottawa, it means that should the Michelin Guide eventually arrive in the capital, Green Stars will no longer form part of the awards landscape — leaving the traditional one-, two- and three-star system, Bib Gourmands and Michelin Recommended selections as the principal restaurant distinctions to watch.</p>
+          <p>Had the Green Star remained part of Michelin's awards, Ottawa would have had at least one particularly compelling candidate. Antheia, chef Briana Kim's fermentation-driven vegetarian restaurant, places preservation, seasonality and the creative use of ingredients that might otherwise be discarded at the heart of its cooking. With the Green Star disappearing, however, we'll never know whether Ottawa might have earned a green distinction alongside its traditional stars.</p>
+        </div>
+      </div>
+
+      <div class="update">
+        <p class="update-date">May 2026</p>
+        <p class="update-title">Canada's 100 Best 2026: Only Three for Ottawa</p>
+        <div class="update-body">
+          <p>The 2026 edition of Canada's 100 Best Restaurants has been released, and Ottawa once again finds itself lightly represented. Only three local restaurants made the list: Atelier (#54), Antheia (#76), and Arlo (#77). The arrival of Antheia is an encouraging sign for the city's dining scene, but with just three entries overall, Ottawa continues to lag behind Canada's larger culinary destinations in national rankings.</p>
+        </div>
+      </div>
+
+      <div class="update">
+        <p class="update-date">May 2026</p>
+        <div class="update-body">
+          <p>The 2026 Michelin Guide Québec expanded its reach significantly, recognizing 121 restaurants across the province, including 13 Michelin-starred establishments, 85 recommended restaurants, new Green Stars, and seven additional Bib Gourmands. Yet despite being Quebec's fourth-largest city and a growing culinary destination, Gatineau was once again completely absent from the guide — receiving no stars, Bib Gourmands, recommended restaurants, or any other Michelin recognition.</p>
+        </div>
+      </div>
+
+      <div class="update">
+        <p class="update-date">January 2026</p>
+        <div class="update-body">
+          <p>Antheia has recently opened in Ottawa and is already drawing attention as a serious fine-dining debut. Led by chef Briana Kim, the intimate, fermentation-driven tasting menu emphasizes precision, depth, and a clear culinary point of view. While still early, Antheia shows many of the qualities associated with Michelin Guide recognition and is one to watch closely.</p>
+        </div>
+      </div>
+
+      <div class="update">
+        <p class="update-date">November 2025</p>
+        <p class="update-title">Ottawa Tourism Meets with Top Chefs to Discuss Michelin Potential</p>
+        <div class="update-body">
+          <p>Ottawa Tourism recently held a closed-door conversation with a group of leading Ottawa chefs to discuss how the city can better position itself for future consideration by the Michelin Guide.</p>
+          <p>Chefs from North &amp; Navy were in attendance, along with representatives from several other well-known restaurants in the city. While no official statement has been released from Ottawa Tourism, multiple chefs who were present confirmed that the discussion focused on:</p>
+          <ul>
+            <li>What Michelin looks for in a city — consistency, culinary identity, international visibility, and a concentrated level of excellence.</li>
+            <li>How Ottawa restaurants can work together to elevate standards and present a unified culinary narrative.</li>
+            <li>Potential next steps, including chef-led collaboration with Ottawa Tourism, hosting visiting critics, and organizing media or industry tours to spotlight Ottawa's finest kitchens.</li>
+          </ul>
+          <p>This marks the first known instance of formal dialogue between Ottawa Tourism and the city's culinary leaders specifically about Michelin readiness — a significant milestone for a city not yet on the Guide's radar.</p>
+        </div>
+      </div>
+
+      <div class="update">
+        <p class="update-date">November 2025</p>
+        <div class="update-body">
+          <p>Vancouver has just been unveiled, bringing the city's total to 12 One-Star restaurants, up from ten last year. Inspectors added a few new names while reaffirming the strength of Vancouver's existing stars, along with several fresh Bib Gourmand selections that broaden the city's culinary map.</p>
+          <p>Ottawa, however, remains off Michelin's list — at least for now.</p>
+        </div>
+      </div>
+
+      <div class="update">
+        <p class="update-date">September 2025</p>
+        <div class="update-body">
+          <p>Toronto &amp; Region's 2025 Michelin awards brought some big wins — Pearl Morissette elevated to Two Stars, aKin earned its first Star, and Sundays picked up a Green Star, among other additions. Meanwhile, Ottawa still has no restaurants with Michelin Stars — for now — but with the growing spotlight on Canadian cities like Québec and Vancouver, many in Ottawa are hopeful its food scene might soon get its chance in the Guide.</p>
+        </div>
+      </div>
+
+      <div class="update">
+        <p class="update-date">September 2025</p>
+        <p class="update-title">Ottawa Michelin Watch is live.</p>
+        <div class="update-body">
+          <p>We'll be tracking which restaurants in Ottawa are most likely to earn Michelin stars (or Bib Gourmands) if and when the Guide arrives. This list will be updated regularly — check back for predictions, new contenders, and local dining news.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-name">Ottawa Michelin Watch</span>
+      <span class="footer-note">An independent project. Not affiliated with the Michelin Guide.<br>© 2026 Ottawa Michelin Watch</span>
+    </div>
+  </footer>
+
+</body>
+</html>
